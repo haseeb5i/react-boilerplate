@@ -46,7 +46,7 @@
       "prettier --write"
     ],
     "*.ts?(x)": [
-      "eslint",
+      "npx eslint",
       "prettier --write"
     ]
   },
