@@ -1,5 +1,4 @@
-import { Text } from "components";
-import { Container } from "./styles";
+import { Text, Container } from "components/elements";
 
 const Home = () => {
   return (

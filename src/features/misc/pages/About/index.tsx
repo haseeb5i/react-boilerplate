@@ -1,4 +1,4 @@
-import { Text, Box } from "components";
+import { Text, Box } from "components/elements";
 
 const About = () => {
   return (
