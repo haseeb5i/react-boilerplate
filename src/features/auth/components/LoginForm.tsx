@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
 import * as z from "zod";
 
-import { Button } from "@/components/Elements";
-import { Form, InputField } from "@/components/Form";
-import { useAuth } from "@/lib/auth";
+import { Button } from "components/elements";
+// import { Form, InputField } from "components/form";
 
 const schema = z.object({
   email: z.string().min(1, "Required"),
@@ -20,11 +19,11 @@ type LoginFormProps = {
 };
 
 export const LoginForm = ({ onSuccess }: LoginFormProps) => {
-  const { login, isLoggingIn } = useAuth();
+  // const { login, isLoggingIn } = useAuth();
 
   return (
     <div>
-      <Form<LoginValues, typeof schema>
+      {/* <Form<LoginValues, typeof schema>
         onSubmit={async (values) => {
           await login(values);
           onSuccess();
@@ -46,14 +45,14 @@ export const LoginForm = ({ onSuccess }: LoginFormProps) => {
               registration={register("password")}
             />
             <div>
-              <Button isLoading={isLoggingIn} type="submit" className="w-full">
+              <Button disabled={isLoggingIn} type="submit" className="w-full">
                 Log in
               </Button>
             </div>
           </>
         )}
       </Form>
-      <div className="mt-2 flex items-center justify-end">
+       <div className="mt-2 flex items-center justify-end">
         <div className="text-sm">
           <Link
             to="../register"
@@ -62,7 +61,7 @@ export const LoginForm = ({ onSuccess }: LoginFormProps) => {
             Register
           </Link>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

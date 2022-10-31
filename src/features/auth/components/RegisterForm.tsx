@@ -1,12 +1,8 @@
-import { Switch } from "@headlessui/react";
 import * as React from "react";
 import { Link } from "react-router-dom";
 import * as z from "zod";
 
-import { Button } from "@/components/Elements";
-import { Form, InputField, SelectField } from "@/components/Form";
-import { useTeams } from "@/features/teams";
-import { useAuth } from "@/lib/auth";
+import { Button } from "components/elements";
 
 const schema = z
   .object({
@@ -37,18 +33,12 @@ type RegisterFormProps = {
 };
 
 export const RegisterForm = ({ onSuccess }: RegisterFormProps) => {
-  const { register, isRegistering } = useAuth();
+  // const { register, isRegistering } = useAuth();
   const [chooseTeam, setChooseTeam] = React.useState(false);
-
-  const teamsQuery = useTeams({
-    config: {
-      enabled: chooseTeam,
-    },
-  });
 
   return (
     <div>
-      <Form<RegisterValues, typeof schema>
+      {/* <Form<RegisterValues, typeof schema>
         onSubmit={async (values) => {
           await register(values);
           onSuccess();
@@ -143,7 +133,7 @@ export const RegisterForm = ({ onSuccess }: RegisterFormProps) => {
             Log In
           </Link>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
