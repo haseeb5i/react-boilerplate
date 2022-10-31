@@ -46,7 +46,7 @@
       "prettier --write"
     ],
     "*.ts?(x)": [
-      "eslint --cache --fix",
+      "eslint",
       "prettier --write"
     ]
   },
