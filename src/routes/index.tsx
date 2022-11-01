@@ -10,6 +10,7 @@ import {
 import Home from "features/misc/pages/Home";
 import About from "features/misc/pages/About";
 import Wagmi from "components/examples/wagmi";
+import DarkModeToggle from "components/examples/dark-mode";
 
 function Root() {
   return (
@@ -23,6 +24,7 @@ function Root() {
             <Link to="/about">About</Link>
           </li>
         </ul>
+        <DarkModeToggle />
       </nav>
 
       <div id="detail">
