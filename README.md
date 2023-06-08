@@ -1,6 +1,8 @@
 # React Starter Template
 
-## Guide
+## Guides
+
+### Setup and Run
 
 To start a new project, clone this repo and run the following commands
 
@@ -8,6 +10,10 @@ To start a new project, clone this repo and run the following commands
 $ npm install
 $ npm run dev
 ```
+
+### Commit
+
+Follow the [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) to write commit messages.
 
 ## More Tools
 
