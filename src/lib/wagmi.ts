@@ -5,7 +5,7 @@ import { alchemyProvider } from "wagmi/providers/alchemy";
 
 export const { chains, publicClient, webSocketPublicClient } = configureChains(
   [mainnet],
-  [alchemyProvider({ apiKey: process.env.REACT_APP_ALCHEMY_API_KEY! })]
+  [alchemyProvider({ apiKey: import.meta.env.VITE_ALCHEMY_API_KEY })]
 );
 
 export const wagmiClient = createConfig({
