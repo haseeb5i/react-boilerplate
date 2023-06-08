@@ -6,8 +6,8 @@ import {
   QueryKey,
   QueryStatus,
 } from "@tanstack/react-query";
-import { loginFn, logoutFn, registerFn, loadUser } from "lib/auth";
-import { type AuthUser } from "features/auth";
+import { loginFn, logoutFn, registerFn, loadUser } from "@/lib/auth";
+import { type AuthUser } from "@/features/auth";
 // import { AxiosError } from "axios";
 
 // TODO: improve types

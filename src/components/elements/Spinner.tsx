@@ -1,5 +1,5 @@
 import React from "react";
-import { styled, keyframes, type CSS } from "theme";
+import { styled, keyframes, type CSS } from "@/theme";
 
 type SpinnerProps = React.HTMLAttributes<unknown> & {
   css?: CSS;

@@ -7,12 +7,10 @@ import {
 } from "react-router-dom";
 
 // TODO: check how to use lazy with router 6.4
-import Home from "features/misc/pages/Home";
-import About from "features/misc/pages/About";
-import Wagmi from "components/examples/wagmi";
-import DarkModeToggle from "components/examples/dark-mode";
+import Home from "@/features/misc/pages/Home";
+import About from "@/features/misc/pages/About";
 
-function Root() {
+export function Root() {
   return (
     <div>
       <nav>
@@ -24,7 +22,6 @@ function Root() {
             <Link to="/about">About</Link>
           </li>
         </ul>
-        <DarkModeToggle />
       </nav>
 
       <div id="detail">
@@ -50,7 +47,7 @@ function ErrorPage() {
 }
 
 // tutorial: https://reactrouter.com/en/main/start/tutorial
-const router = createBrowserRouter([
+export const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
@@ -64,12 +61,6 @@ const router = createBrowserRouter([
         path: "about",
         element: <About />,
       },
-      {
-        path: "wagmi",
-        element: <Wagmi />,
-      },
     ],
   },
 ]);
-
-export default router;

@@ -3,7 +3,7 @@ import { useAuth } from "hooks/use-auth";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 
-import { Button } from "components/elements";
+import { Button } from "@/components/elements";
 import { useForm } from "react-hook-form";
 
 const schema = z.object({

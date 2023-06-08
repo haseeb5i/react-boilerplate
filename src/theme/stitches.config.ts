@@ -35,5 +35,5 @@ export const darkTheme = createTheme("dark-theme", darkThemeOpts);
 
 // stitches types
 export type CSS = Stitches.CSS<typeof config>;
-export type VariantProps<T extends {}> = Stitches.VariantProps<T>;
+export type VariantProps<T extends object> = Stitches.VariantProps<T>;
 export type StitchesTheme = typeof theme;

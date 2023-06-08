@@ -1,4 +1,4 @@
-import { Text, Container } from "components/elements";
+import { Text, Container } from "@/components/elements";
 
 const Home = () => {
   return (
