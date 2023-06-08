@@ -6,11 +6,14 @@ To start a new project, clone this repo and run the following commands
 
 ```bash
 $ npm install
-$ npx husky install
 $ npm run dev
 ```
 
 ## More Tools
+
+### Component Library
+
+Use [radix-ui](https://www.radix-ui.com/docs/primitives/overview/getting-started) for component library. It is a collection of open source accessible UI components that helps you build your own design system from scratch. There docs have examples to use each component with `stitches`, 'tailwindcss`and`css`.
 
 ### Graphql
 
