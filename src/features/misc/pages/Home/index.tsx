@@ -1,10 +1,10 @@
-import { Text, Container } from "@/components/elements";
+import { Text } from "@/components/ui/text";
 
 const Home = () => {
   return (
-    <Container>
+    <div>
       <Text>This is home page</Text>
-    </Container>
+    </div>
   );
 };
 

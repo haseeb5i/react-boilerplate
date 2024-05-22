@@ -5,7 +5,7 @@ import {
   LoginCredentialsDTO,
   RegisterCredentialsDTO,
 } from "@/features/auth";
-import storage from "utils/storage";
+import { storage } from "@/utils/storage";
 
 export async function loadUser() {
   if (storage.getToken()) {

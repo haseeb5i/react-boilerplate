@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDarkMode } from "usehooks-ts";
-import { darkTheme } from "theme/stitches.config";
+import { darkTheme } from "@/theme/stitches.config";
 
 // TODO: expand this to support more than just dark mode
 // https://github.com/pacocoursey/next-themes/blob/main/src/index.tsx

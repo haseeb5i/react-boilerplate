@@ -43,17 +43,19 @@ export function AuthProvider(props: AuthProviderProps) {
     status,
     fetchStatus,
     refetch,
-  } = useQuery(authKey, loadUser);
+  } = useQuery({ queryKey: authKey, queryFn: loadUser });
 
-  const loginMutation = useMutation(loginFn, {
+  const loginMutation = useMutation({
+    mutationFn: loginFn,
     onSuccess: (user) => {
       queryClient.setQueryData(authKey, user);
     },
   });
 
-  const registerMutation = useMutation(registerFn);
+  const registerMutation = useMutation({ mutationFn: registerFn });
 
-  const logoutMutation = useMutation(logoutFn, {
+  const logoutMutation = useMutation({
+    mutationFn: logoutFn,
     onSuccess: () => {
       queryClient.clear();
     },
@@ -66,11 +68,11 @@ export function AuthProvider(props: AuthProviderProps) {
       error,
       refetchUser: refetch,
       login: loginMutation.mutateAsync,
-      isLoggingIn: loginMutation.isLoading,
+      isLoggingIn: loginMutation.isPending,
       logout: logoutMutation.mutateAsync,
-      isLoggingOut: logoutMutation.isLoading,
+      isLoggingOut: logoutMutation.isPending,
       register: registerMutation.mutateAsync,
-      isRegistering: registerMutation.isLoading,
+      isRegistering: registerMutation.isPending,
     }),
     [
       user,
@@ -78,11 +80,11 @@ export function AuthProvider(props: AuthProviderProps) {
       error,
       refetch,
       loginMutation.mutateAsync,
-      loginMutation.isLoading,
+      loginMutation.isPending,
       logoutMutation.mutateAsync,
-      logoutMutation.isLoading,
+      logoutMutation.isPending,
       registerMutation.mutateAsync,
-      registerMutation.isLoading,
+      registerMutation.isPending,
     ]
   );
 
@@ -92,7 +94,7 @@ export function AuthProvider(props: AuthProviderProps) {
     );
   }
 
-  if (status === "loading" || fetchStatus === "idle") {
+  if (status === "pending" || fetchStatus === "idle") {
     return <div>Loading...</div>;
   }
 

@@ -1,24 +1,21 @@
-import { configureChains, createConfig, mainnet } from "wagmi";
-import { MetaMaskConnector } from "wagmi/connectors/metaMask";
-import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
-import { alchemyProvider } from "wagmi/providers/alchemy";
+import { http, createConfig } from "wagmi";
+import { mainnet, sepolia } from "wagmi/chains";
+import { metaMask, walletConnect } from "wagmi/connectors";
 
-export const { chains, publicClient, webSocketPublicClient } = configureChains(
-  [mainnet],
-  [alchemyProvider({ apiKey: import.meta.env.VITE_ALCHEMY_API_KEY })]
-);
-
-export const wagmiClient = createConfig({
-  autoConnect: true,
+export const wagmiConfig = createConfig({
+  chains: [mainnet, sepolia],
   connectors: [
-    new MetaMaskConnector({ chains }),
-    new WalletConnectConnector({
-      chains,
-      options: {
-        projectId: "...",
-      },
-    }),
+    metaMask(),
+    walletConnect({ projectId: import.meta.env.VITE_WC_PROJECT_ID }),
   ],
-  publicClient,
-  webSocketPublicClient,
+  transports: {
+    [mainnet.id]: http(),
+    [sepolia.id]: http(),
+  },
 });
+
+declare module "wagmi" {
+  interface Register {
+    config: typeof wagmiConfig;
+  }
+}

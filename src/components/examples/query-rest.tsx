@@ -1,5 +1,5 @@
-import { Box } from "../elements";
 import { useQuery } from "@tanstack/react-query";
+import { Box } from "../elements";
 
 interface Joke {
   id: number;
@@ -16,7 +16,10 @@ async function getJoke(): Promise<Joke> {
 }
 
 const ReactQueryExample = () => {
-  const query = useQuery(["joke"], getJoke);
+  const query = useQuery({
+    queryKey: ["joke"],
+    queryFn: getJoke,
+  });
 
   if (query.isLoading) {
     return <div>Loading...</div>;

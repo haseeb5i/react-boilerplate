@@ -1,6 +1,6 @@
 const storagePrefix = "tp_app";
 
-const storage = {
+export const storage = {
   // persist user auth token
   getToken: (): string | null => {
     return JSON.parse(
@@ -33,4 +33,3 @@ const storage = {
   },
 };
 
-export default storage;
